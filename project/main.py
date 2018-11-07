@@ -1,5 +1,15 @@
 # -*- coding: utf-8 -*-
 
-'''Entry point to all things to avoid circular imports.'''
-from app import app, freezer, pages
-from views import *
+from flask import Flask, render_template, url_for
+from flask_flatpages import FlatPages
+from flask_frozen import Freezer
+
+app = Flask(__name__)
+app.config.from_pyfile('settings.py')
+pages = FlatPages(app)
+freezer = Freezer(app)
+
+
+@app.route('/')
+def home():
+    return render_template('index.html')
