@@ -4,6 +4,10 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
  */
 
+:root {
+    --main-bg-color: #7a2323; 
+}
+
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   padding-top: 54px;
@@ -177,17 +181,17 @@ section.resume-section .resume-item .resume-date {
 
 .bg-primary {
   /*background-color: #BD5D38 !important;*/
-  background-color: #872e28 !important;
+  background-color: var(--main-bg-color) !important;
 }
 
 .text-primary {
   /*color: #BD5D38 !important;*/
-  color: #872e28 !important;
+  color: var(--main-bg-color) !important;
 }
 
 a {
   /*color: #BD5D38;*/
-  color: #872e28;
+  color: var(--main-bg-color);
 }
 
 a:hover, a:focus, a:active {
