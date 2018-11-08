@@ -74,7 +74,7 @@ p.lead {
 }
 
 .social-icons a:hover {
-  background-color: #BD5D38;
+  background-color: var(--main-bg-color);
 }
 
 .dev-icons {
@@ -82,7 +82,7 @@ p.lead {
 }
 
 .dev-icons .list-inline-item i:hover {
-  color: #BD5D38;
+  color: var(--main-bg-color);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -154,7 +154,8 @@ p.lead {
 section.resume-section {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
-  max-width: 75rem;
+  padding-left: 5rem !important;
+  /*max-width: 75rem;*/
 }
 
 section.resume-section .resume-item .resume-date {
@@ -186,10 +187,31 @@ section.resume-section .resume-item .resume-date {
 }
 
 a {
-  /*color: #BD5D38;*/
   color: var(--main-bg-color);
 }
 
 a:hover, a:focus, a:active {
   color: #cecece;
+}
+
+/*For Carousel*/
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+.row-equal .card {
+   width: 100%;
+}
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
 }
