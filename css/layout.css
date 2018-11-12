@@ -215,7 +215,7 @@ ul#nav li.current a { color: var(--accent-color); }
    position: relative;
    width: 200px;
    height: 250px;
-   border-radius: 50%;
+   border-radius: 51%;
 }
 #about .contact-details { width: 41.66667%; }
 #about .download {
