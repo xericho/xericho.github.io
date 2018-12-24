@@ -293,7 +293,7 @@ ul#nav li.current a { color: var(--accent-color); }
 
 #work {
    background: #fff;
-   padding-top: 10px;
+   padding-top: 60px;
    padding-bottom: 10px;
    overflow: hidden;
 }
@@ -343,7 +343,7 @@ ul#nav li.current a { color: var(--accent-color); }
 
 #publication {
    background: #fff;
-   padding-top: 10px;
+   padding-top: 60px;
    padding-bottom: 10px;
    overflow: hidden;
 }
