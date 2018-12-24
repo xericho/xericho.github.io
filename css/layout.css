@@ -244,7 +244,7 @@ ul#nav li.current a { color: var(--accent-color); }
 #resume {
    background: #fff;
    padding-top: 90px;
-   padding-bottom: 72px;
+   padding-bottom: 10px;
    overflow: hidden;
 }
 
@@ -293,8 +293,8 @@ ul#nav li.current a { color: var(--accent-color); }
 
 #work {
    background: #fff;
-   padding-top: 90px;
-   padding-bottom: 72px;
+   padding-top: 10px;
+   padding-bottom: 10px;
    overflow: hidden;
 }
 
@@ -333,6 +333,106 @@ ul#nav li.current a { color: var(--accent-color); }
    margin-left: 5px;
 }
 #work .date {
+   font: 15px/24px 'opensans-regular', sans-serif;
+   margin-top: 6px;
+}
+
+/* ------------------------------------------------------------------ */
+/* d. Publication Section
+/* ------------------------------------------------------------------ */
+
+#publication {
+   background: #fff;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   overflow: hidden;
+}
+
+#publication a, #publication a:visited  { color: var(--accent-color); }
+#publication a:hover, #publication a:focus { color: #313131; }
+
+#publication h1 {
+   font: 18px/24px 'opensans-bold', sans-serif;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+#publication h1 span {
+   border-bottom: 3px solid var(--accent-color);
+   padding-bottom: 6px;
+}
+#publication h3 {
+   font: 25px/30px 'opensans-bold', sans-serif;
+}
+
+#publication .header-col { padding-top: 9px; }
+#publication .main-col { padding-right: 10%; }
+
+.education, .work {
+   margin-bottom: 48px;
+   padding-bottom: 24px;
+   border-bottom: 1px solid #E8E8E8;
+}
+#publication .info {
+   font: 16px/24px 'librebaskerville-italic', serif;
+   color: #6E7881;
+   margin-bottom: 18px;
+   margin-top: 9px;
+}
+#publication .info span {
+   margin-right: 5px;
+   margin-left: 5px;
+}
+#publication .date {
+   font: 15px/24px 'opensans-regular', sans-serif;
+   margin-top: 6px;
+}
+
+/* ------------------------------------------------------------------ */
+/* d. Skills Section
+/* ------------------------------------------------------------------ */
+
+#skills {
+   background: #fff;
+   padding-top: 10px;
+   padding-bottom: 40px;
+   overflow: hidden;
+}
+
+#skills a, #skills a:visited  { color: var(--accent-color); }
+#skills a:hover, #skills a:focus { color: #313131; }
+
+#skills h1 {
+   font: 18px/24px 'opensans-bold', sans-serif;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+#skills h1 span {
+   border-bottom: 3px solid var(--accent-color);
+   padding-bottom: 6px;
+}
+#skills h3 {
+   font: 25px/30px 'opensans-bold', sans-serif;
+}
+
+#skills .header-col { padding-top: 9px; }
+#skills .main-col { padding-right: 10%; }
+
+.education, .work {
+   margin-bottom: 24px;
+   padding-bottom: 48px;
+   border-bottom: 1px solid #E8E8E8;
+}
+#skills .info {
+   font: 16px/24px 'librebaskerville-italic', serif;
+   color: #6E7881;
+   margin-bottom: 18px;
+   margin-top: 9px;
+}
+#skills .info span {
+   margin-right: 5px;
+   margin-left: 5px;
+}
+#skills .date {
    font: 15px/24px 'opensans-regular', sans-serif;
    margin-top: 6px;
 }
