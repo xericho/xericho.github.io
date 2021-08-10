@@ -103,9 +103,7 @@
     }
 
     p {
-      text-transform: uppercase;
       letter-spacing: _font(letter-spacing);
-      font-size: 0.8rem;
       line-height: 2;
     }
   }
@@ -116,6 +114,7 @@
       margin-bottom: 0;
       list-style: none;
       padding-left: 0;
+      padding-right: 2px;
       border: solid _size(border-width) _palette(border);
       border-radius: _size(border-radius);
 
@@ -268,6 +267,10 @@
             line-height: 3rem;
             min-width: 0;
             width: 100%;
+          }
+
+          button {
+              margin-left: 1rem;
           }
         }
       }
