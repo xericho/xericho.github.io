@@ -1,0 +1,57 @@
+.timeline-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 50%;
+    top: 53%;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+.work-icon {
+    left: 55%;
+}
+
+.timeline-list {
+    margin-bottom: 0px;
+    margin-top: 1rem;
+}
+
+.vertical-timeline {
+    width: 100% !important;
+    padding: 0.5rem 0 !important;
+}
+
+.vertical-timeline-element {
+    margin: 2rem 0 !important;
+}
+
+.vertical-timeline-element-content {
+    box-shadow: none !important;
+}
+
+.vertical-timeline::before {
+    left: 19px !important;
+    width: 3px !important;
+}
+
+.vertical-timeline-element-date {
+    float: none !important;
+    padding: 0px !important;
+    margin-top: 0px !important;
+}
+
+.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
+    margin: 0 10px 0px 10px;
+}
+
+.vertical-timeline-element-title, .vertical-timeline-element-subtitle {
+    text-transform: none !important;
+}
+
+.vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
+    -webkit-animation: cd-bounce-2 .3s !important;
+    -moz-animation: cd-bounce-2 .3s !important;
+    animation: cd-bounce-2 .3s !important;
+}
