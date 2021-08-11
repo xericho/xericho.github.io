@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { BsCodeSlash  } from 'react-icons/bs';
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
-      <span className="icon fa-terminal"></span>
+        <BsCodeSlash
+            className="icon"
+            size="2.5rem"
+            color="#fff"
+            style={{top: "1rem"}}
+        />
     </div>
     <div className="content">
       <div className="inner">
