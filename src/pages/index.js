@@ -8,12 +8,23 @@ import Footer from '../components/Footer'
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      isArticleVisible: false,
-      timeout: false,
-      articleTimeout: false,
-      article: '',
-      loading: 'is-loading'
+    let hash = props.location.hash.replace('#', '')
+    if(['academia', 'work', 'about', 'contact'].includes(hash)) {
+        this.state = {
+          isArticleVisible: true,
+          timeout: true,
+          articleTimeout: true,
+          article: hash,
+          loading: 'is-loading'
+        }
+    } else {
+        this.state = {
+          isArticleVisible: false,
+          timeout: false,
+          articleTimeout: false,
+          article: '',
+          loading: 'is-loading'
+        }
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
@@ -40,7 +51,6 @@ class IndexPage extends React.Component {
   }
 
   handleOpenArticle(article) {
-
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
       article

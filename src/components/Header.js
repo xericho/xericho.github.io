@@ -10,7 +10,7 @@ const Header = props => (
       <div className="inner">
         <h1>Eric Ho</h1>
         <p>
-            Welcome! I'm a machine learning engineer!
+            Hello! I'm an electrical learning engineer with a passion for <em>machine learning</em>, <em>computer vision</em> and <em>data science</em>.
         </p>
       </div>
     </div>
@@ -19,10 +19,10 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('intro')
+              props.onOpenArticle('academia')
             }}
-          >
-            Intro
+		  >
+            Academia
           </button>
         </li>
         <li>
