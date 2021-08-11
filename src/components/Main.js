@@ -26,6 +26,29 @@ class Main extends React.Component {
         style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
       >
         <article
+          id="about"
+          className={`${this.props.article === 'about' ? 'active' : ''} ${
+            this.props.articleTimeout ? 'timeout' : ''
+          }`}
+          style={{ display: 'none' }}
+        >
+          <h2 className="major">About</h2>
+          <span className="image main">
+            <img src={pic03} alt="" />
+          </span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
+            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
+            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
+            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
+            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
+            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
+            amet.
+          </p>
+          {close}
+        </article>
+
+        <article
           id="timeline"
           className={`${this.props.article === 'timeline' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
@@ -126,13 +149,13 @@ class Main extends React.Component {
         </article>
 
         <article
-          id="work"
-          className={`${this.props.article === 'work' ? 'active' : ''} ${
+          id="projects"
+          className={`${this.props.article === 'projects' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Work</h2>
+          <h2 className="major">Projects</h2>
           <span className="image main">
             <img src={pic02} alt="" />
           </span>
@@ -150,29 +173,6 @@ class Main extends React.Component {
             Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
             libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
             tempus.
-          </p>
-          {close}
-        </article>
-
-        <article
-          id="about"
-          className={`${this.props.article === 'about' ? 'active' : ''} ${
-            this.props.articleTimeout ? 'timeout' : ''
-          }`}
-          style={{ display: 'none' }}
-        >
-          <h2 className="major">About</h2>
-          <span className="image main">
-            <img src={pic03} alt="" />
-          </span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-            eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-            erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-            lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-            Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-            Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-            amet.
           </p>
           {close}
         </article>

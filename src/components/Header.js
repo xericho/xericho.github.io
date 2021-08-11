@@ -10,12 +10,21 @@ const Header = props => (
       <div className="inner">
         <h1>Eric Ho</h1>
         <p>
-            Hello! I'm an electrical learning engineer with a passion for <em>machine learning</em>, <em>computer vision</em> and <em>data science</em>.
+            An electrical engineer with a passion for <em>machine learning</em>, <em>computer vision</em> and <em>data science</em>.
         </p>
       </div>
     </div>
     <nav>
       <ul>
+        <li>
+          <button
+            onClick={() => {
+              props.onOpenArticle('about')
+            }}
+          >
+            About
+          </button>
+        </li>
         <li>
           <button
             onClick={() => {
@@ -28,19 +37,10 @@ const Header = props => (
         <li>
           <button
             onClick={() => {
-              props.onOpenArticle('work')
+              props.onOpenArticle('projects')
             }}
           >
-            Work
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('about')
-            }}
-          >
-            About
+            Projects
           </button>
         </li>
         <li>
