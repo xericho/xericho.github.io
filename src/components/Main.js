@@ -206,7 +206,9 @@ class Main extends React.Component {
               <textarea name="message" id="message" rows="4" required></textarea>
             </div>
 			<input type="hidden" className="form-control" placeholder="Favorite food" name="bot-field" />
-			<div data-netlify-recaptcha="true"></div>
+            <div className="field">
+				<div data-netlify-recaptcha="true"></div>
+            </div>
             <ul className="actions">
               <li>
                 <input type="submit" value="Send Message" className="special" />
