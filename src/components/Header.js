@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import logo from '../images/EH_logo.png'
 import { BsCodeSlash  } from 'react-icons/bs';
 
 const Header = props => (
