@@ -185,19 +185,28 @@ class Main extends React.Component {
           style={{ display: 'none' }}
         >
           <h2 className="major">Contact</h2>
-          <form method="post" action="#">
+          <form name="contactForm"
+			data-netlify="true"
+			netlify-honeypot="bot-field"
+			data-netlify-recaptcha="true"
+			method="POST"
+			id="contactForm"
+		  >
+			<input type="hidden" name="form-name" value="contactForm" />
             <div className="field half first">
               <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" required/>
             </div>
             <div className="field half">
               <label htmlFor="email">Email</label>
-              <input type="text" name="email" id="email" />
+              <input type="text" name="email" id="email" required/>
             </div>
             <div className="field">
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
+              <textarea name="message" id="message" rows="4" required></textarea>
             </div>
+			<input type="hidden" className="form-control" placeholder="Favorite food" name="bot-field" />
+			<div data-netlify-recaptcha="true"></div>
             <ul className="actions">
               <li>
                 <input type="submit" value="Send Message" className="special" />
@@ -210,28 +219,10 @@ class Main extends React.Component {
           <ul className="icons">
             <li>
               <a
-                href="https://twitter.com/HuntaroSan"
-                className="icon fa-twitter"
+				target="_blank"
+                href="https://linkedin.com/in/xericho/"
+                className="icon fa-linkedin"
               >
-                <span className="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://codebushi.com" className="icon fa-facebook">
-                <span className="label">Facebook</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://codebushi.com" className="icon fa-instagram">
-                <span className="label">Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/codebushi/gatsby-starter-dimension"
-                className="icon fa-github"
-              >
-                <span className="label">GitHub</span>
               </a>
             </li>
           </ul>
