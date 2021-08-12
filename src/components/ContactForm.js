@@ -70,6 +70,7 @@
             sitekey={RECAPTCHA_KEY}
             size="normal"
             id="recaptcha-google"
+			theme="dark"
             onChange={() => setButtonDisabled(false)}
         />
         <ul className="actions">
