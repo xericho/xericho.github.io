@@ -62,6 +62,11 @@
     }
   }
 
+  .eh-logo {
+    padding: 1.2rem 1rem 1rem 1rem;
+    width: 5rem;
+  }
+
   .logo {
     width: 5.5rem;
     height: 5.5rem;
@@ -214,6 +219,11 @@
         top: calc(-2rem - 1px);
         height: calc(2rem + 1px);
       }
+    }
+
+    .eh-logo {
+        padding: 1rem 1rem 1rem 1rem;
+        width: 4.5rem;
     }
 
     .logo {

@@ -6,12 +6,15 @@ import { BsCodeSlash  } from 'react-icons/bs';
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
+        {/*
         <BsCodeSlash
             className="icon"
             size="2.5rem"
             color="#fff"
             style={{top: "1rem"}}
         />
+        */}
+        <img className="eh-logo" src={logo} alt="" />
     </div>
     <div className="content">
       <div className="inner">
