@@ -29,12 +29,6 @@
         const form = e.target
         const recaptchaValue = recaptchaRef.current.getValue()
 
-        // Validate inputs
-        if (form.checkValidity() === false) {
-            form.classList.add('was-validated')
-            return
-        }
-
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
