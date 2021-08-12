@@ -38,7 +38,7 @@
                 ...state,
             }),
         })
-        .then(() => navigate(form.getAttribute('action')))
+        .then(() => navigate('https://ericho.ml'))
         .catch(error => alert(error))
     }
 
@@ -50,7 +50,6 @@
         data-netlify-recaptcha="true"
         method="POST"
         id="contactForm"
-        action="/"
       >
         <input type="hidden" name="form-name" value="contactForm" />
         <div className="field half first">
