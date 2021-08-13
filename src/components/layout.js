@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 import '../assets/scss/timeline.scss';
+import '../assets/scss/scrollbar.scss';
 
 const Layout = ({ children, location }) => {
 

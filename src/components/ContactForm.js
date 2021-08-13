@@ -1,10 +1,10 @@
-  import React, { useState } from 'react'
-  import Recaptcha from 'react-google-recaptcha'
-  import { navigate } from 'gatsby'
+import React, { useState } from 'react'
+import Recaptcha from 'react-google-recaptcha'
+import { navigate } from 'gatsby'
 
-  const RECAPTCHA_KEY = '6LecAfYbAAAAAKpTuVMSWMgn_Mp-IK4zfTabmGdu'
+const RECAPTCHA_KEY = '6LecAfYbAAAAAKpTuVMSWMgn_Mp-IK4zfTabmGdu'
 
-  export default function ContactForm() {
+export default function ContactForm() {
 
     const [state, setState] = useState({})
 
@@ -43,46 +43,69 @@
     }
 
     return (
-      <form name="contactForm"
-        onSubmit={handleSubmit}
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
-        method="POST"
-        id="contactForm"
-      >
-        <input type="hidden" name="form-name" value="contactForm" />
-        <div className="field half first">
-          <label htmlFor="name">Name</label>
-          <input onChange={handleChange} type="text" name="name" id="name" required/>
+        <div>
+          <h2 className="major">Contact</h2>
+          <form name="contactForm"
+            onSubmit={handleSubmit}
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
+            method="POST"
+            id="contactForm"
+          >
+            <input type="hidden" name="form-name" value="contactForm" />
+            <div className="field half first">
+              <label htmlFor="name">Name</label>
+              <input onChange={handleChange} type="text" name="name" id="name" required/>
+            </div>
+            <div className="field half">
+              <label htmlFor="email">Email</label>
+              <input onChange={handleChange} type="text" name="email" id="email" required/>
+            </div>
+            <div className="field">
+              <label htmlFor="message">Message</label>
+              <textarea onChange={handleChange} name="message" id="message" rows="4" required></textarea>
+            </div>
+            <input type="hidden" className="form-control" placeholder="Favorite food" name="bot-field" />
+            <Recaptcha
+                ref={recaptchaRef}
+                sitekey={RECAPTCHA_KEY}
+                size="normal"
+                id="recaptcha-google"
+                theme="dark"
+                onChange={() => setButtonDisabled(false)}
+            />
+            <ul className="actions">
+              <li>
+                <input disabled={buttonDisabled} type="submit" value="Send Message" className="special" />
+              </li>
+              <li>
+                <input type="reset" value="Reset" />
+              </li>
+            </ul>
+          </form>
+          <ul className="icons">
+            <li>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://linkedin.com/in/xericho/"
+                className="icon fa-linkedin"
+              >
+              </a>
+            </li>
+            <li>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://github.com/xericho"
+                className="icon fa-github"
+              >
+              </a>
+            </li>
+          </ul>
         </div>
-        <div className="field half">
-          <label htmlFor="email">Email</label>
-          <input onChange={handleChange} type="text" name="email" id="email" required/>
-        </div>
-        <div className="field">
-          <label htmlFor="message">Message</label>
-          <textarea onChange={handleChange} name="message" id="message" rows="4" required></textarea>
-        </div>
-        <input type="hidden" className="form-control" placeholder="Favorite food" name="bot-field" />
-        <Recaptcha
-            ref={recaptchaRef}
-            sitekey={RECAPTCHA_KEY}
-            size="normal"
-            id="recaptcha-google"
-			theme="dark"
-            onChange={() => setButtonDisabled(false)}
-        />
-        <ul className="actions">
-          <li>
-            <input disabled={buttonDisabled} type="submit" value="Send Message" className="special" />
-          </li>
-          <li>
-            <input type="reset" value="Reset" />
-          </li>
-        </ul>
-      </form>
     )
 
-  }
+}
 
