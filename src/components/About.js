@@ -11,7 +11,7 @@ export default function ContactForm() {
           <Row>
             <Col lg={4}>
                 <img src={pic} alt=""
-                style={{width: "100%", maxHeight: "20rem", borderRadius: "5px", marginBottom: "1rem"}}/>
+                style={{width: "100%", borderRadius: "5px", marginBottom: "1rem"}}/>
             </Col>
             <Col lg={8}>
               <p style={{marginBottom: "1rem"}}>
