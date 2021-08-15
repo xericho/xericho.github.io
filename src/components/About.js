@@ -1,17 +1,20 @@
 import React from 'react'
 import { Grid, Row, Col  } from "react-flexbox-grid";
-import pic from '../images/profile_pic.jpg'
+import Icons from './Icons'
+import { StaticImage  } from "gatsby-plugin-image"
 
-
-export default function ContactForm() {
+export default function About() {
 
     return (
         <Grid>
           <h2 className="major">About</h2>
           <Row>
             <Col lg={4}>
-                <img src={pic} alt=""
-                style={{width: "100%", borderRadius: "5px", marginBottom: "1rem"}}/>
+                <StaticImage
+                    src="../images/profile_pic.jpg"
+                    alt=""
+                    placeholder="blurred"
+                    style={{width: "100%", borderRadius: "5px", marginBottom: "1rem"}}/>
             </Col>
             <Col lg={8}>
               <p style={{marginBottom: "1rem"}}>
@@ -31,26 +34,7 @@ export default function ContactForm() {
             and various microcontrollers. I love to learn new technologies and apply them in practical ways
             such as learning ReactJS to build this website!
           </p>
-          <ul className="icons">
-            <li>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://linkedin.com/in/xericho/"
-                className="icon fa-linkedin"
-              >
-              </a>
-            </li>
-            <li>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://github.com/xericho"
-                className="icon fa-github"
-              >
-              </a>
-            </li>
-          </ul>
+          <Icons />
         </Grid>
     )
 }

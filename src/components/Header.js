@@ -1,20 +1,15 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import logo from '../images/EH_logo.png'
-import { BsCodeSlash  } from 'react-icons/bs';
+import { StaticImage  } from "gatsby-plugin-image"
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo">
-        {/*
-        <BsCodeSlash
-            className="icon"
-            size="2.5rem"
-            color="#fff"
-            style={{top: "1rem"}}
-        />
-        */}
-        <img className="eh-logo" src={logo} alt="" />
+        <StaticImage
+            src="../images/EH_logo.png"
+            alt=""
+            placeholder="blurred"
+            className="eh-logo" />
     </div>
     <div className="content">
       <div className="inner">

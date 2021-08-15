@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import ContactForm from './ContactForm'
 import About from './About'
 import Timeline from './Timeline'
 import Projects from './Projects'
+import ContactForm from './ContactForm'
 
 class Main extends React.Component {
   render() {

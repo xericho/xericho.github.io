@@ -1,18 +1,14 @@
 import React from 'react'
 import { Grid, Row, Col  } from "react-flexbox-grid";
-import pic03 from '../images/pic03.jpg'
 
 
-export default function ContactForm() {
+export default function Projects() {
 
     return (
         <Grid>
-          <h2 className="major">About</h2>
+          <h2 className="major">Projects</h2>
           <Row>
-            <Col lg={6}>
-                <img src={pic03} alt="" style={{width: "100%", height: "300px"}}/>
-            </Col>
-            <Col lg={6}>
+            <Col lg={12}>
               <p style={{marginBottom: "1rem"}}>
                 Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
                 eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam

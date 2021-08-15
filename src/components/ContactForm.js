@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Recaptcha from 'react-google-recaptcha'
 import { navigate } from 'gatsby'
+import Icons from './Icons'
 
 const RECAPTCHA_KEY = '6LecAfYbAAAAAKpTuVMSWMgn_Mp-IK4zfTabmGdu'
 
@@ -84,26 +85,7 @@ export default function ContactForm() {
               </li>
             </ul>
           </form>
-          <ul className="icons">
-            <li>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://linkedin.com/in/xericho/"
-                className="icon fa-linkedin"
-              >
-              </a>
-            </li>
-            <li>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://github.com/xericho"
-                className="icon fa-github"
-              >
-              </a>
-            </li>
-          </ul>
+          <Icons />
         </div>
     )
 
