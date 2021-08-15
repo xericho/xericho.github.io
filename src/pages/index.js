@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import { StaticImage  } from "gatsby-plugin-image"
 
 import Header from '../components/Header'
 import Main from '../components/Main'
@@ -115,7 +116,13 @@ class IndexPage extends React.Component {
             />
             <Footer timeout={this.state.timeout} />
           </div>
-          <div id="bg"></div>
+          <div id="bg">
+            <StaticImage
+                src="../images/bg.jpg"
+                alt=""
+                placeholder="blurred"
+            />
+          </div>
         </div>
       </Layout>
     )
