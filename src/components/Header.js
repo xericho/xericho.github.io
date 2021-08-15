@@ -41,7 +41,7 @@ const Header = props => (
               props.onOpenArticle('timeline')
             }}
 		  >
-            Timeline
+            Experience
           </button>
         </li>
         <li>

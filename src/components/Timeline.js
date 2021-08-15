@@ -8,7 +8,7 @@ export default function Timeline() {
 
     return (
         <div>
-          <h2 className="major">Timeline</h2>
+          <h2 className="major">Experience</h2>
 			<VerticalTimeline
                 layout="1-column-left"
             >
