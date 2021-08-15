@@ -121,6 +121,7 @@ class IndexPage extends React.Component {
                 src="../images/bg.jpg"
                 alt=""
                 placeholder="blurred"
+                className="bg"
             />
           </div>
         </div>
