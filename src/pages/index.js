@@ -116,12 +116,8 @@ class IndexPage extends React.Component {
             />
             <Footer timeout={this.state.timeout} />
           </div>
-            <StaticImage
-                src="../images/bg.jpg"
-                alt=""
-                placeholder="blurred"
-                className="bg"
-            />
+          <div id="bg">
+          </div>
         </div>
       </Layout>
     )
