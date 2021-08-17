@@ -9,15 +9,41 @@ export default function Projects() {
           <h2 className="major">Projects</h2>
           <Row>
             <Col lg={12}>
-              <p style={{marginBottom: "1rem"}}>
-                Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-                eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-                erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-                lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-                Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-                Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-                amet.
-              </p>
+              <h4 style={{marginBottom: "0.5rem", color: "gray"}}>
+                March 2018
+              </h4>
+              <h3 style={{textTransform: "none"}}>
+                Classical Music Generator
+              </h3>
+              <ul>
+                <li>Designed a character-level LSTM RNN with PyTorch that can generate classical music in ABC music notation</li>
+                <li>Optimized the RNN by using GRU units, dropout layers, and adaptive learning rates via RMSprop</li>
+                <li>Implemented a "temperature" parameter that changes how random/structured the generated music is</li>
+              </ul>
+
+              <h4 style={{marginBottom: "0.5rem", color: "gray"}}>
+                March 2018
+              </h4>
+              <h3 style={{textTransform: "none"}}>
+                Doppelganger Face Generation using DC-GAN
+              </h3>
+              <ul>
+                <li>Created a Deep Convolutional General Adversarial Network (DC-GAN) that generated realistic human faces</li>
+                <li>Found the closest face by using various similarity metrics such as Euclidean and Minkowski distances</li>
+                <li>Applied feature extraction using principal component analysis (PCA) and discrete cosine transform (DCT)</li>
+              </ul>
+
+              <h4 style={{marginBottom: "0.5rem", color: "gray"}}>
+                December 2018
+              </h4>
+              <h3 style={{textTransform: "none"}}>
+                Bayesian Classifier with Gaussian Mixtures
+              </h3>
+              <ul>
+                <li>Segmented an image of a cheetah into the foreground (cheetah) and background by classifying each pixel using Bayes decision rule</li>
+                <li>Found the maximum likelihood parameter estimates of Gaussian mixtures using the expectation maximization (EM) algorithm</li>
+                <li>Achieved 4.6% probability of error with 64 Gaussian components densities</li>
+              </ul>
             </Col>
           </Row>
         </Grid>
