@@ -22,7 +22,7 @@ export default function About() {
                 based in San Diego. I went to University of California, San Diego
                 where I got my Masters and Bachelors degree in Electrical Engineering.
                 During my academic years, I <a href="https://ieeexplore.ieee.org/document/8328848" target="_blank"
-                rel="noreferrer"> published a paper</a> in object recognition to help children with autism and I
+                rel="noreferrer"> published a paper</a> in object recognition to help children with autism and
                 worked at Brain Corporation as a ML engineer intern to improve autonomous cleaning vehicles.
                 Currently, I work at Trabus Technologies as a ML engineer, developing models to
                 forecast estimated time of arrivals (ETA) for ships on the U.S. inland waterways.
