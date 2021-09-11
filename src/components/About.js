@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, Row, Col  } from "react-flexbox-grid";
 import Icons from './Icons'
 import { StaticImage  } from "gatsby-plugin-image"
+import PDFResume from '../assets/Eric_Ho_Resume.pdf'
 
 export default function About() {
 
@@ -34,6 +35,14 @@ export default function About() {
             and various microcontrollers. I love to learn new technologies and apply them in practical ways
             such as learning ReactJS to build this website!
           </p>
+          <p><a
+            download="Eric_Ho_Resume.pdf"
+            target="_blank"
+            href={PDFResume}
+            style={{borderBottom: 'none'}}
+          >
+            <button>Download Resume</button>
+          </a></p>
           <Icons />
         </Grid>
     )
