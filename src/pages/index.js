@@ -10,7 +10,7 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props)
     let hash = props.location.hash.replace('#', '')
-    if(['timeline', 'projects', 'publications', 'about', 'contact'].includes(hash)) {
+    if(['timeline', 'projects', 'achievements', 'about', 'contact'].includes(hash)) {
         this.state = {
           isArticleVisible: true,
           timeout: true,

@@ -3,7 +3,7 @@ import React from 'react'
 import About from './About'
 import Timeline from './Timeline'
 import Projects from './Projects'
-import Publications from './Publications'
+import Achievements from './Achievements'
 import ContactForm from './ContactForm'
 
 class Main extends React.Component {
@@ -46,13 +46,13 @@ class Main extends React.Component {
         </article>
 
         <article
-          id="publications"
-          className={`${this.props.article === 'publications' ? 'active' : ''} ${
+          id="achievements"
+          className={`${this.props.article === 'achievements' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
           style={{ display: 'none' }}
         >
-          <Publications />
+          <Achievements />
           {close}
         </article>
 
