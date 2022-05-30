@@ -2,6 +2,7 @@ import {
   Box,
   Container,
   Flex,
+  Image,
   Text,
   IconButton,
   Button,
@@ -22,6 +23,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import logo from '../assets/EH_logo_border.png'
 
 export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -49,12 +51,22 @@ export const Navbar = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
+          <Link href={'#'}>
+            <Image
+              alt={'EH_logo'}
+              fit={'cover'}
+              align={'center'}
+              w={'3rem'}
+              h={'3rem'}
+              src={logo}
+            />
+          </Link>
+          {/* <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
             Eric Ho
-          </Text>
+          </Text> */}
         </Flex>
 
         <Stack
@@ -221,8 +233,12 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
+    label: 'Experience',
+    href: '#experience',
+  },
+  {
     label: 'Education',
-    href: '#'
+    href: '#education'
     // children: [
     //   {
     //     label: 'Explore Design Work',
@@ -238,14 +254,14 @@ const NAV_ITEMS = [
   },
   {
     label: 'Certificates',
-    href: '#test',
+    href: '#certificates',
   },
   {
     label: 'Publications',
-    href: '#',
+    href: '#publications',
   },
   {
     label: 'Contact',
-    href: '#blah',
+    href: '#contact',
   },
 ];

@@ -18,7 +18,7 @@ function App() {
       <Box textAlign="center" fontSize="xl" p={10}>
         <Navbar />
         <Grid minH="100vh" p={3}>
-          <Hero id='test' />
+          <Hero />
         </Grid>
         <Grid minH="100vh" p={3}>
           <Hero id='blah'/>
