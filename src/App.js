@@ -15,8 +15,8 @@ import theme from './theme';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl" p={10}>
-        <Navbar />
+      <Box textAlign="center" fontSize="xl" py={8}>
+        <Navbar theme={theme} />
         <Grid minH="100vh" p={3}>
           <Hero />
         </Grid>

@@ -1,6 +1,15 @@
 import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        // bg: 'red.100',
+        border: '15px solid',
+        borderColor: 'red.100',
+      }
+    }
+  },
   components: {
     Button: {
       baseStyle: {
@@ -14,7 +23,7 @@ const theme = extendTheme({
         _focus: {
           'box-shadow': 'none'
         }
-      }
+      },
     }
   }
 })

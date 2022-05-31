@@ -23,10 +23,12 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { ColorModeSwitcher } from './ColorModeSwitcher'
 import logo from '../assets/EH_logo_border.png'
 
-export const Navbar = () => {
+export const Navbar = ({ theme }) => {
   const { isOpen, onToggle } = useDisclosure();
+  // theme.styles.global.body.bg = 'red.100'
 
   return (
     <Container maxW={'5xl'}>
@@ -70,13 +72,14 @@ export const Navbar = () => {
         </Flex>
 
         <Stack
-          flex={{ base: 1, md: 0 }}
+          flex={{ base: 1, md: 'none' }}
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
+            <ColorModeSwitcher />
         </Stack>
       </Flex>
 
@@ -91,6 +94,7 @@ const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const linkAccentHoverColor = useColorModeValue('red.100', 'red.300');
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -99,15 +103,34 @@ const DesktopNav = () => {
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Link
+                // className='navlink'
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize={'md'}
                 fontWeight={500}
                 color={linkColor}
+                position='relative'
+                textDecoration='none'
                 _hover={{
-                  textDecoration: 'none',
                   color: linkHoverColor,
-                }}>
+                  _before: {
+                    transform: 'scaleX(1)',
+                  }
+                }}
+                _before={{
+                  content: '""',
+                  position: 'absolute',
+                  display: 'block',
+                  width: '100%',
+                  height: '10px',
+                  bottom: '5px',
+                  left: 0,
+                  transform: 'scaleX(0)',
+                  transformOrigin: 'top left',
+                  transition: 'transform 0.3s ease',
+                  backgroundColor: linkAccentHoverColor,
+                }}
+                >
                 {navItem.label}
               </Link>
             </PopoverTrigger>

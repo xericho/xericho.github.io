@@ -15,6 +15,7 @@ import {
 import avatar from '../assets/avatar.png'
 
 export const Hero = ({ id }) => {
+  const accentColor = useColorModeValue('red.100', 'red.300');
   return (
     <Container maxW={'7xl'} id={id}>
       <Stack
@@ -27,7 +28,7 @@ export const Hero = ({ id }) => {
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
-            <Text as={'span'} color={'red.400'}>
+            <Text as={'span'} color={'red.300'}>
               Hey there! 👋
             </Text>
             <br />
@@ -44,15 +45,15 @@ export const Hero = ({ id }) => {
                 position: 'absolute',
                 bottom: 1,
                 left: 0,
-                bg: 'red.400',
+                bg: accentColor,
                 zIndex: -1,
               }}>
               Eric Ho
             </Text>
             <br />
           </Heading>
-          <Text color={'gray.600'}>
-              I am a machine learning engineer based in San Diego.
+          <Text color={useColorModeValue('gray.600', 'gray.200')}>
+              I am a machine learning engineer based in San Diego, CA.
           </Text>
         </Stack>
 
@@ -69,7 +70,7 @@ export const Hero = ({ id }) => {
             top={'-20%'}
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'red.400')}
+            color={useColorModeValue('red.50', 'red.300')}
           />
             <Image
               alt={'Hero Image'}
