@@ -23,7 +23,7 @@ import logo from '../assets/EH_logo_v2.webp'
 export const Navbar = ({ theme }) => {
   const { isOpen, onToggle } = useDisclosure();
   const invertImg = useColorModeValue({}, {filter: 'invert(1)'})
-  // theme.styles.global.body.bg = 'red.100'
+  // theme.styles.global.body.bg = 'blue.100'
 
   return (
     <Container maxW={'5xl'}>
@@ -83,7 +83,7 @@ export const Navbar = ({ theme }) => {
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const linkAccentHoverColor = useColorModeValue('red.100', 'gray.600');
+  const linkAccentHoverColor = useColorModeValue('blue.100', 'gray.600');
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -176,12 +176,12 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Experience',
-    href: '#experience',
+    label: 'About',
+    href: '#about'
   },
   {
-    label: 'Education',
-    href: '#education'
+    label: 'Experience',
+    href: '#experience',
   },
   {
     label: 'Certificates',

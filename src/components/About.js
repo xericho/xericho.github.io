@@ -14,10 +14,10 @@ import { Blob } from './Blob';
 import avatar from '../assets/avatar.png'
 
 export const About = ({ id }) => {
-  const accentColor = useColorModeValue('red.100', 'gray.600');
+  const accentColor = useColorModeValue('blue.100', 'gray.600');
 
   return (
-    <Container maxW={'5xl'} id={id} py={5}>
+    <Container maxW={'5xl'} id={id} pb={10}>
       <Heading
         display={{ base: '', lg: 'flex' }}
         lineHeight={1.1}
@@ -60,7 +60,7 @@ export const About = ({ id }) => {
             top={'-20%'}
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'gray.700')}
+            color={useColorModeValue('blue.50', 'gray.700')}
           />
           <Image
             alt={'About Me Image'}
@@ -79,7 +79,6 @@ export const About = ({ id }) => {
               where I got my Masters and Bachelors degree in Electrical Engineering.
               During my academic years, I {' '}
               <Link 
-                as={'span'}
                 position={'relative'}
                 _after={{
                   content: "''",

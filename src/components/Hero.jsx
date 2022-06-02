@@ -11,7 +11,7 @@ import { Blob } from './Blob';
 import avatar from '../assets/avatar.png'
 
 export const Hero = ({ id }) => {
-  const accentColor = useColorModeValue('red.100', 'gray.600');
+  const accentColor = useColorModeValue('blue.100', 'gray.600');
   return (
     <Container maxW={'7xl'} id={id}>
       <Stack
@@ -24,7 +24,7 @@ export const Hero = ({ id }) => {
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
-            <Text as={'span'} color={useColorModeValue('red.300', 'gray.400')}>
+            <Text as={'span'} color={useColorModeValue('blue.300', 'gray.400')}>
               Hey there! 👋
             </Text>
             <br />
@@ -66,7 +66,7 @@ export const Hero = ({ id }) => {
             top={'-20%'}
             left={0}
             zIndex={-1}
-            color={useColorModeValue('red.50', 'gray.700')}
+            color={useColorModeValue('blue.50', 'gray.700')}
           />
           <Image
             alt={'Hero Image'}
