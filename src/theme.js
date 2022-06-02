@@ -1,14 +1,15 @@
 import { extendTheme } from '@chakra-ui/react'
+import { mode } from "@chakra-ui/theme-tools"
 
 const theme = extendTheme({
   styles: {
-    global: {
+    global: (props) => ({
       body: {
         // bg: 'red.100',
         border: '15px solid',
-        borderColor: 'red.100',
+        borderColor: mode("red.100", "gray.700")(props),
       }
-    }
+    })
   },
   components: {
     Button: {

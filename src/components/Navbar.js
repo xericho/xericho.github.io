@@ -5,29 +5,24 @@ import {
   Image,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
   Link,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
 } from '@chakra-ui/icons';
 import { ColorModeSwitcher } from './ColorModeSwitcher'
-import logo from '../assets/EH_logo_border.png'
+import logo from '../assets/EH_logo_v2.webp'
 
 export const Navbar = ({ theme }) => {
   const { isOpen, onToggle } = useDisclosure();
+  const invertImg = useColorModeValue({}, {filter: 'invert(1)'})
   // theme.styles.global.body.bg = 'red.100'
 
   return (
@@ -61,14 +56,9 @@ export const Navbar = ({ theme }) => {
               w={'3rem'}
               h={'3rem'}
               src={logo}
+              style={invertImg}
             />
           </Link>
-          {/* <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            Eric Ho
-          </Text> */}
         </Flex>
 
         <Stack
@@ -93,101 +83,46 @@ export const Navbar = ({ theme }) => {
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-  const linkAccentHoverColor = useColorModeValue('red.100', 'red.300');
+  const linkAccentHoverColor = useColorModeValue('red.100', 'gray.600');
 
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
-            <PopoverTrigger>
-              <Link
-                // className='navlink'
-                p={2}
-                href={navItem.href ?? '#'}
-                fontSize={'md'}
-                fontWeight={500}
-                color={linkColor}
-                position='relative'
-                textDecoration='none'
-                _hover={{
-                  color: linkHoverColor,
-                  _before: {
-                    transform: 'scaleX(1)',
-                  }
-                }}
-                _before={{
-                  content: '""',
-                  position: 'absolute',
-                  display: 'block',
-                  width: '100%',
-                  height: '10px',
-                  bottom: '5px',
-                  left: 0,
-                  transform: 'scaleX(0)',
-                  transformOrigin: 'top left',
-                  transition: 'transform 0.3s ease',
-                  backgroundColor: linkAccentHoverColor,
-                }}
-                >
-                {navItem.label}
-              </Link>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}>
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
+          <Link
+            m={2}
+            href={navItem.href ?? '#'}
+            fontSize={'md'}
+            fontWeight={500}
+            color={linkColor}
+            position='relative'
+            textDecoration='none'
+            _hover={{
+              color: linkHoverColor,
+              _before: {
+                transform: 'scaleX(1)',
+                transformOrigin: 'bottom left',
+              }
+            }}
+            _before={{
+              content: '""',
+              position: 'absolute',
+              width: '100%',
+              height: '10px',
+              top: '13px',
+              left: 0,
+              // zIndex: -1,
+              transform: 'scaleX(0)',
+              transformOrigin: 'bottom right',
+              transition: 'transform 0.3s ease-out',
+              backgroundColor: linkAccentHoverColor,
+            }}
+            >
+            {navItem.label}
+          </Link>
         </Box>
       ))}
     </Stack>
-  );
-};
-
-const DesktopSubNav = ({ label, href, subLabel }) => {
-  return (
-    <Link
-      href={href}
-      role={'group'}
-      display={'block'}
-      p={2}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
-      <Stack direction={'row'} align={'center'}>
-        <Box>
-          <Text
-            transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
-            fontWeight={500}>
-            {label}
-          </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
   );
 };
 
@@ -262,18 +197,6 @@ const NAV_ITEMS = [
   {
     label: 'Education',
     href: '#education'
-    // children: [
-    //   {
-    //     label: 'Explore Design Work',
-    //     subLabel: 'Trending Design to inspire you',
-    //     href: '#',
-    //   },
-    //   {
-    //     label: 'New & Noteworthy',
-    //     subLabel: 'Up-and-coming Designers',
-    //     href: '#',
-    //   },
-    // ],
   },
   {
     label: 'Certificates',
