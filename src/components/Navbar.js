@@ -90,31 +90,16 @@ const DesktopNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Link
+            className='underline'
             m={2}
             href={navItem.href ?? '#'}
             fontSize={'md'}
             fontWeight={500}
             color={linkColor}
-            position='relative'
-            textDecoration='none'
             _hover={{
               color: linkHoverColor,
-              _before: {
-                transform: 'scaleX(1)',
-                transformOrigin: 'bottom left',
-              }
             }}
             _before={{
-              content: '""',
-              position: 'absolute',
-              width: '100%',
-              height: '10px',
-              top: '13px',
-              left: 0,
-              // zIndex: -1,
-              transform: 'scaleX(0)',
-              transformOrigin: 'bottom right',
-              transition: 'transform 0.3s ease-out',
               backgroundColor: linkAccentHoverColor,
             }}
             >
