@@ -51,7 +51,7 @@ export const Navbar = ({ theme }) => {
           <Link href={'#'}>
             <Image
               alt={'EH_logo'}
-              fit={'cover'}
+              fit={'contain'}
               align={'center'}
               w={'3rem'}
               h={'3rem'}
