@@ -1,13 +1,7 @@
 import {
-  Box,
   Container,
-  Stack,
-  Flex,
   Heading,
   Text,
-  Link,
-  Image,
-  Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Timeline } from './Timeline'

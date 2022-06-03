@@ -1,5 +1,4 @@
 import {
-  Box,
   Container,
   Stack,
   Flex,
@@ -7,7 +6,6 @@ import {
   Text,
   Link,
   Image,
-  Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Blob } from './Blob';
@@ -90,9 +88,8 @@ export const About = ({ id }) => {
                   bg: accentColor,
                   zIndex: -1,
                 }}
-                href="https://ieeexplore.ieee.org/document/8328848" 
-                target="_blank"
-                rel="noreferrer"> 
+                isExternal
+                href="https://ieeexplore.ieee.org/document/8328848">
                 published a paper
               </Link> 
               {' '} in object recognition to help children with autism and

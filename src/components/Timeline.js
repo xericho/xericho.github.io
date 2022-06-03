@@ -1,7 +1,8 @@
 // Source: https://templateskart.com/components/timeline
-import React from 'react';
+import { React, useState } from 'react';
 import {
   Box,
+  Button,
   chakra,
   Container,
   Text,
@@ -9,14 +10,11 @@ import {
   VStack,
   Flex,
   useColorModeValue,
-  useBreakpointValue,
   UnorderedList,
   ListItem,
-  Icon,
+  Collapse,
 } from '@chakra-ui/react';
 import { FaRegNewspaper } from 'react-icons/fa';
-import { BsGithub } from 'react-icons/bs';
-import { IconType } from 'react-icons';
 
 const milestones = [
   {
@@ -28,7 +26,8 @@ const milestones = [
       'Created a hospital admission count forecast model that predicts a week into the future with <7% MAPE to help hospitals better manage their resources',
       'Developed a feature selection pipeline in Databricks that automates the feature engineering process and integrated it to a proprietary auto-ML software ',
       'Trained an object segmentation computer vision model that detects maritime ships from satellite images using Yolov5 and Detectron2 deep neural networks',
-    ]
+    ],
+    collapse: true,
   },
   {
     date: 'Mar 2019 - Nov 2021',
@@ -41,7 +40,8 @@ const milestones = [
       'Implemented a management system that allows users to oversee the work progress of their clients and auto-generates Tableau workbooks by parsing/analyzing text files using AWS S3 buckets, Django, and PostgreSQL',
       'Pioneered an EDI to exchange invoice documents between barge companies with a REST API and a full stack website to replace outdated exchange system',
       'Designed a dashboard to analyze and monitor hourly AIS data feeds to maintain data integrity and detect anomalies',
-    ]
+    ],
+    collapse: true,
   },
   {
     date: 'Dec 2018',
@@ -51,7 +51,8 @@ const milestones = [
     description: [
       'Specialty: Machine Learning and Data Science',
       'GPA: 3.6',
-    ]
+    ],
+    collapse: false,
   },
   {
     date: 'Jun 2018 - Sep 2018',
@@ -63,7 +64,8 @@ const milestones = [
       'Implemented a synthetic environment to model glass walls and to collect data',
       'Trained a LSTM and multilayer perceptron (MLP) to detect glass walls using Keras with 85% accuracy',
       'Developed unit tests with pytest to ensure reliability and reproducibility',
-    ]
+    ],
+    collapse: true,
   },
   {
     date: 'Nov 2017 - Jun 2018',
@@ -74,7 +76,8 @@ const milestones = [
       'Converted software to control a digital micromirror device (DMD) from C++ to LabVIEW and Matlab',
       'Synced a charged-coupled device (CCD) with a DMD to take an image at 30kHz',
       'Applied object oriented analysis and design principles to create a modular set of VIs',
-    ]
+    ],
+    collapse: true,
   },
   {
     date: 'Jun 2017',
@@ -84,7 +87,8 @@ const milestones = [
     description: [
       'Specialty: Machine Learning and Controls',
       'GPA: 3.58',
-    ]
+    ],
+    collapse: false,
   },
 ];
 
@@ -102,13 +106,16 @@ export const Timeline = ({ accentColor }) => {
   );
 };
 
-const Card = ({ title, subtitle, description, icon, date, accentColor }) => {
+const Card = ({ title, subtitle, description, collapse, date, accentColor }) => {
+  const [show, setShow] = useState(false)
+  const handleToggle = () => setShow(!show)
+
   const cardColor = useColorModeValue('gray.100', 'gray.700') 
   const arrowColor = useColorModeValue('gray-100', 'gray-700') 
 
   return (
     <HStack
-      p={{ base: 8, sm: 10 }}
+      p={4}
       bg={cardColor}
       spacing={5}
       rounded="lg"
@@ -128,14 +135,14 @@ const Card = ({ title, subtitle, description, icon, date, accentColor }) => {
     >
       {/* <Icon as={icon} w={16} h={16} color={accentColor} pr={5} /> */}
       <Box>
-        <HStack spacing={2} mb={1}>
+        <HStack spacing={2}>
           <Text fontSize="sm">
             {date}
           </Text>
         </HStack>
         <VStack spacing={2} mb={3} textAlign="left">
           <chakra.h1
-            fontSize="2xl"
+            fontSize={{ base: 'l', md: '2xl'}}
             lineHeight={1.2}
             fontWeight="bold"
             w="100%"
@@ -143,7 +150,7 @@ const Card = ({ title, subtitle, description, icon, date, accentColor }) => {
             {title}
           </chakra.h1>
           <chakra.h2
-            fontSize="lg"
+            fontSize={{ base: 'md', md: 'xl'}}
             lineHeight={1.2}
             fontWeight="bold"
             w="100%"
@@ -151,13 +158,25 @@ const Card = ({ title, subtitle, description, icon, date, accentColor }) => {
           >
             {subtitle}
           </chakra.h2>
-          <UnorderedList>
+          <Collapse startingHeight={65} in={show}>
+            <UnorderedList>
+            {
+              description.map((item) => (
+                <ListItem 
+                  key={item}
+                  fontSize={{ base: 'md', md: 'xl'}}
+                  >{item}</ListItem>
+              ))
+            }
+            </UnorderedList>
+          </Collapse>
           {
-            description.map((item) => (
-              <ListItem key={item}>{item}</ListItem>
-            ))
+            collapse ? 
+              <Button size='sm' onClick={handleToggle} mt='2' variant='ghost'>
+                Show {show ? 'Less' : 'More'}
+              </Button> :
+              <Text></Text>
           }
-          </UnorderedList>
         </VStack>
       </Box>
     </HStack>
@@ -166,7 +185,7 @@ const Card = ({ title, subtitle, description, icon, date, accentColor }) => {
 
 const LineWithDot = () => {
   const borderAccentColor = useColorModeValue('blue.300', 'gray.600');
-  const backgroundColor = useColorModeValue('blue.50', 'gray.500');
+  const backgroundColor = useColorModeValue('blue.50', 'gray.600');
 
   return (
     <Flex pos="relative" alignItems="center" mr="40px">
