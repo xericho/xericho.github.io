@@ -11,13 +11,13 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Blob } from './Blob';
-import avatar from '../assets/avatar.png'
+import avatar from '../assets/avatar-laying-down.png'
 
 export const About = ({ id }) => {
   const accentColor = useColorModeValue('blue.100', 'gray.600');
 
   return (
-    <Container maxW={'5xl'} id={id} pb={10}>
+    <Container maxW={'5xl'} id={id} pb={'5rem'}>
       <Heading
         display={{ base: '', lg: 'flex' }}
         lineHeight={1.1}
@@ -31,7 +31,7 @@ export const About = ({ id }) => {
             width: 'full',
             height: '30%',
             position: 'absolute',
-            bottom: 1,
+            bottom: 0,
             left: 0,
             bg: accentColor,
             zIndex: -1,
