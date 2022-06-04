@@ -14,8 +14,10 @@ import {
   ListItem,
   Collapse,
   Icon,
+	Image,
 } from '@chakra-ui/react';
 import { IoMdSchool as SchoolIcon, IoMdBusiness as WorkIcon } from 'react-icons/io'
+import avatar from '../assets/avatar-2fingers.png'
 
 const milestones = [
   {
@@ -96,7 +98,19 @@ const milestones = [
 export const Timeline = ({ accentColor }) => {
 
   return (
-    <Container maxWidth="7xl" pt={10}>
+    <Container position={'relative'} maxWidth="7xl" pt={10}>
+		<Image
+			alt={'About Me Image'}
+			fit={'contain'}
+			align={'top'}
+      top={'-5rem'}
+      right={'5rem'}
+			w={'7rem'}
+			h={'100%'}
+			src={avatar}
+			position={'absolute'}
+      display={{ base: 'none', md: 'block' }}
+		/>
       {milestones.map((milestone, title) => (
         <Flex key={title} mb="10px">
           <LineWithDot />
@@ -179,7 +193,7 @@ const Card = ({ title, subtitle, description, collapse, date, icon, accentColor 
           </Collapse>
           {
             collapse ? 
-              <Button size='sm' onClick={handleToggle} mt='2' variant='ghost'>
+              <Button size='sm' onClick={handleToggle}  variant='ghost'>
                 Show {show ? 'Less' : 'More'}
               </Button> :
               <Text></Text>

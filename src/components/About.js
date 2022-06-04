@@ -70,7 +70,7 @@ export const About = ({ id }) => {
           />
         </Flex>
 
-        <Stack flex={2} spacing={{ base: 5, md: 10 }}>
+        <Stack flex={2} spacing={{ base: 5, md: 10 }} fontSize={{ base: 'md', md: 'xl'}}>
           <Text>
               Hello! My name is Eric Ho and I'm an machine learning engineer
               based in San Diego. I went to University of California, San Diego
