@@ -10,7 +10,7 @@ export const Experience = ({ id }) => {
   const accentColor = useColorModeValue('blue.100', 'gray.600');
 
 	return (
-	<Container maxW={'5xl'} id={id} pb={10}>
+	<Container maxW={'5xl'} id={id} pb={'5rem'}>
 		<Heading
 			display={{ base: '', lg: 'flex' }}
 			lineHeight={1.1}

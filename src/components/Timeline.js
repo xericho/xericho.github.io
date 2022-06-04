@@ -13,15 +13,16 @@ import {
   UnorderedList,
   ListItem,
   Collapse,
+  Icon,
 } from '@chakra-ui/react';
-import { FaRegNewspaper } from 'react-icons/fa';
+import { IoMdSchool as SchoolIcon, IoMdBusiness as WorkIcon } from 'react-icons/io'
 
 const milestones = [
   {
     date: 'Nov 2021 - Present',
     title: 'Lead Machine Learning Engineer',
     subtitle: 'BigBear.ai',
-    icon: FaRegNewspaper,
+    icon: WorkIcon,
     description: [
       'Created a hospital admission count forecast model that predicts a week into the future with <7% MAPE to help hospitals better manage their resources',
       'Developed a feature selection pipeline in Databricks that automates the feature engineering process and integrated it to a proprietary auto-ML software ',
@@ -33,7 +34,7 @@ const milestones = [
     date: 'Mar 2019 - Nov 2021',
     title: 'Machine Learning Engineer',
     subtitle: 'Trabus Technologies',
-    icon: FaRegNewspaper,
+    icon: WorkIcon,
     description: [
       'Developed a travel time model that predicts the ETA of two points on the US waterway using gradient boosting which achieved 22% MAPE, and deployed using Docker containers on AWS EC2 instances',
       'Built a GraphQL webserver for a river information system commercial application to advise mariners of ETAs, potential delays, and hazardous conditions (patent pending)',
@@ -47,7 +48,7 @@ const milestones = [
     date: 'Dec 2018',
     title: 'M.S. Electrical Engineering',
     subtitle: 'University of California, San Diego',
-    icon: FaRegNewspaper,
+    icon: SchoolIcon,
     description: [
       'Specialty: Machine Learning and Data Science',
       'GPA: 3.6',
@@ -58,7 +59,7 @@ const milestones = [
     date: 'Jun 2018 - Sep 2018',
     title: 'Platform/Machine Learning Intern',
     subtitle: 'Brain Corporation',
-    icon: FaRegNewspaper,
+    icon: WorkIcon,
     description: [
       'Created point clouds visualizations to analyze the effects of LIDAR scans on glass walls',
       'Implemented a synthetic environment to model glass walls and to collect data',
@@ -71,7 +72,7 @@ const milestones = [
     date: 'Nov 2017 - Jun 2018',
     title: 'LabVIEW/Matlab Consultant',
     subtitle: 'LinOptix, LLC',
-    icon: FaRegNewspaper,
+    icon: WorkIcon,
     description: [
       'Converted software to control a digital micromirror device (DMD) from C++ to LabVIEW and Matlab',
       'Synced a charged-coupled device (CCD) with a DMD to take an image at 30kHz',
@@ -83,7 +84,7 @@ const milestones = [
     date: 'Jun 2017',
     title: 'B.S. Electrical Engineering',
     subtitle: 'University of California, San Diego',
-    icon: FaRegNewspaper,
+    icon: SchoolIcon,
     description: [
       'Specialty: Machine Learning and Controls',
       'GPA: 3.58',
@@ -106,7 +107,7 @@ export const Timeline = ({ accentColor }) => {
   );
 };
 
-const Card = ({ title, subtitle, description, collapse, date, accentColor }) => {
+const Card = ({ title, subtitle, description, collapse, date, icon, accentColor }) => {
   const [show, setShow] = useState(false)
   const handleToggle = () => setShow(!show)
 
@@ -130,16 +131,22 @@ const Card = ({ title, subtitle, description, collapse, date, accentColor }) => 
         borderWidth: '15px 15px 15px 0',
         position: 'absolute',
         left: '-15px',
-        display: 'block'
+        display: { base: 'none', md: 'block'}
       }}
     >
-      {/* <Icon as={icon} w={16} h={16} color={accentColor} pr={5} /> */}
       <Box>
-        <HStack spacing={2}>
+        <Icon as={icon} 
+          w={{ base: 8, md: 10}} 
+          h={{ base: 8, md: 10}} 
+          right={'1rem'}
+          top={'0.5rem'}
+          color={accentColor}  
+          position={'absolute'} />
+        <Flex justify="space-between" alignItems="center" pb={1}>
           <Text fontSize="sm">
             {date}
           </Text>
-        </HStack>
+        </Flex>
         <VStack spacing={2} mb={3} textAlign="left">
           <chakra.h1
             fontSize={{ base: 'l', md: '2xl'}}
@@ -188,7 +195,7 @@ const LineWithDot = () => {
   const backgroundColor = useColorModeValue('blue.50', 'gray.600');
 
   return (
-    <Flex pos="relative" alignItems="center" mr="40px">
+    <Flex pos="relative" alignItems="center" mr="40px" display={{base: 'none', md: 'flex'}}>
       <chakra.span
         position="absolute"
         left="50%"
