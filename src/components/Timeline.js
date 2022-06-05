@@ -156,11 +156,9 @@ const Card = ({ title, subtitle, description, collapse, date, icon, accentColor 
           top={'0.5rem'}
           color={accentColor}  
           position={'absolute'} />
-        <Flex justify="space-between" alignItems="center" pb={1}>
-          <Text fontSize="sm">
-            {date}
-          </Text>
-        </Flex>
+        <Text fontSize="sm" pb={2}>
+          {date}
+        </Text>
         <VStack spacing={2} mb={3} textAlign="left">
           <chakra.h1
             fontSize={{ base: 'l', md: '2xl'}}

@@ -20,6 +20,7 @@ export const About = ({ id }) => {
         display={{ base: '', lg: 'flex' }}
         lineHeight={1.1}
         fontWeight={600}
+        textAlign={'center'}
         fontSize={{ base: '3xl', sm: '3xl', lg: '4xl' }}>
         <Text
           as={'span'}
@@ -43,6 +44,7 @@ export const About = ({ id }) => {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 2, md: 8 }}
         px={3}
+        textAlign="center" 
         direction={{ base: 'column', md: 'row' }}>
         <Flex
           flex={1}
