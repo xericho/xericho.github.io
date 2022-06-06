@@ -59,7 +59,7 @@ export const Contact = ({ id }) => {
               ...state,
           }),
       })
-      .then(() => window.open('https://ericho.ml'))
+      .then(() => window.location.reload())
       .catch(error => alert(error))
   }
 
@@ -147,7 +147,7 @@ export const Contact = ({ id }) => {
                 sitekey={RECAPTCHA_KEY}
                 size="normal"
                 id="recaptcha-google"
-                theme="dark"
+                theme={useColorModeValue('light', 'dark')}
                 onChange={() => setButtonDisabled(false)}
             />
 
