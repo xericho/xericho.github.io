@@ -1,4 +1,5 @@
 import {
+  IconButton,
   Container,
   Stack,
   Flex,
@@ -6,12 +7,18 @@ import {
   Text,
   Image,
   useColorModeValue,
+  HStack,
+  Link,
 } from '@chakra-ui/react';
 import { Blob } from './Blob';
 import avatar from '../assets/avatar.png'
+import { ImGithub as GithubIcon, ImLinkedin as LinkedInIcon } from 'react-icons/im';
 
 export const Hero = ({ id }) => {
   const accentColor = useColorModeValue('blue.100', 'gray.600');
+  const altAccentColor = useColorModeValue('blue.300', 'gray.400');
+  const altHoverAccentColor = useColorModeValue('blue.300', 'gray.400');
+
   return (
     <Container maxW={'7xl'} id={id}>
       <Stack
@@ -25,7 +32,7 @@ export const Hero = ({ id }) => {
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
-            <Text as={'span'} color={useColorModeValue('blue.300', 'gray.400')}>
+            <Text as={'span'} color={altAccentColor}>
               Hey there! 👋
             </Text>
             <br />
@@ -52,6 +59,37 @@ export const Hero = ({ id }) => {
           <Text color={useColorModeValue('gray.600', 'gray.200')}>
               I am a machine learning engineer based in San Diego, CA.
           </Text>
+          <HStack justifyContent={'center'}>
+            <Link href="https://linkedin.com/in/xericho/" isExternal>
+              <IconButton
+                aria-label="linkedin"
+                variant="ghost"
+                size="lg"
+                fontSize="3xl"
+                icon={<LinkedInIcon />}
+                color={altAccentColor}
+                _hover={{
+                  bg: altHoverAccentColor,
+                  color: useColorModeValue('white', 'gray.700'),
+                }}
+              />
+            </Link>
+            <Link href="https://github.com/xericho" isExternal>
+              <IconButton
+                aria-label="github"
+                variant="ghost"
+                size="lg"
+                fontSize="3xl"
+                icon={<GithubIcon />}
+                color={altAccentColor}
+                _hover={{
+                  bg: altHoverAccentColor,
+                  color: useColorModeValue('white', 'gray.700'),
+                }}
+                isRound
+              />
+            </Link>
+          </HStack>
         </Stack>
 
         <Flex

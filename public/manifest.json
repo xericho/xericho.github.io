@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "EH_logo_v2_192px.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "EH_logo_v2_512px.png",
       "type": "image/png",
       "sizes": "512x512"
     }
