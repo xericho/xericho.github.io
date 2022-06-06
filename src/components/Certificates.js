@@ -57,7 +57,7 @@ export const Certificates = ({ id }) => {
       <Stack 
         pt={10}
         align={'center'}
-        spacing={5}
+        spacing={7}
         direction={{ base: 'column', md: 'row' }}
       >
         {
