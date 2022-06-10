@@ -22,3 +22,17 @@
     transform-origin: bottom left;
     transform: scaleX(1);
 }
+
+.dots {
+    position: absolute;
+    z-index: -1;
+    right: -4rem;
+    bottom: -2rem;
+	background:
+		linear-gradient(90deg, #fff 15px, transparent 1%) center,
+		linear-gradient(0deg,  #fff 15px, transparent 1%) center,
+		var(--chakra-colors-blue-50);
+	background-size: 30px 30px;
+	width: 210px;
+	height: 210px;
+}

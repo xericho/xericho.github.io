@@ -18,7 +18,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box fontSize="xl" py={8}>
-        <Navbar theme={theme} />
+        <Navbar />
         <Grid minH="100vh" p={3}>
           <Hero />
         </Grid>

@@ -4,12 +4,15 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  Box,
 } from '@chakra-ui/react';
 import { Certificate } from './Certificate';
 import dl_cert from '../assets/DeepLearning.AI_TF_Developer.jpg'
+import tf_cert from '../assets/tf-cert.png'
 
 const certificates = [{
-    img: 'https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/39247619',
+    img: tf_cert,
+    alt: "Tensorflow Certificate",
     date: 'September 2021',
     program: 'Tensorflow Certficate Program',
     title: 'TensorFlow Developer Certificate',
@@ -17,6 +20,7 @@ const certificates = [{
     url: 'https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/39247619',
   }, {
     img: dl_cert,
+    alt: "DeepLearning.AI TF Certificate",
     date: 'September 2021',
     program: 'DeepLearning.AI',
     title: 'DeepLearning.AI TensorFlow Developer',
@@ -30,7 +34,7 @@ export const Certificates = ({ id }) => {
   const accentColor = useColorModeValue('blue.100', 'gray.600');
 
   return (
-    <Container maxW={'5xl'} id={id} pb={'5rem'}>
+    <Container maxW={'5xl'} id={id} pb={'5rem'} position={'relative'}>
       <Heading
         display={{ base: '', lg: 'flex' }}
         lineHeight={1.1}
@@ -66,6 +70,7 @@ export const Certificates = ({ id }) => {
           ))
         }
       </Stack>
+      <Box className='dots'></Box>
     </Container>
   )
 }

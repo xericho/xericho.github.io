@@ -74,8 +74,8 @@ export const About = ({ id }) => {
 
         <Stack flex={2} spacing={{ base: 5, md: 10 }} fontSize={{ base: 'md', md: 'xl'}}>
           <Text>
-              Hello! My name is Eric Ho and I'm an machine learning engineer
-              based in San Diego. I went to University of California, San Diego
+              Hello! My name is Eric Ho and I'm a machine learning engineer
+              based in San Diego. I went to the University of California, San Diego
               where I got my Masters and Bachelors degree in Electrical Engineering.
               During my academic years, I {' '}
               <Link 
@@ -99,7 +99,7 @@ export const About = ({ id }) => {
               Previously, I worked at Trabus Technologies as a ML engineer, developing models to
               forecast estimated time of arrivals (ETA) for ships on the U.S. inland waterways.
               Currently, I work at BigBear.ai, building a state-of-the-art autoML software and training 
-              various forecast models. 
+              various forecast models for hospital admissions. 
           </Text>
           <Text>
             In my freetime, I like to automate things to make my life easier using my 3D printer

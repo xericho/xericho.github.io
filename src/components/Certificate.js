@@ -8,7 +8,7 @@ import {
   Flex,
 } from '@chakra-ui/react';
 
-export const Certificate = ({ img, date, program, title, credentialId, url }) => {
+export const Certificate = ( cert ) => {
   const boxShadowColor = useColorModeValue('blue-50', 'gray-900') 
 
   const handleLinkClick = (e, link) => {
@@ -19,7 +19,7 @@ export const Certificate = ({ img, date, program, title, credentialId, url }) =>
   return (
     <Flex maxW={'400px'} >
       <Box
-        onClick={(e) => handleLinkClick(e, url)}
+        onClick={(e) => handleLinkClick(e, cert.url)}
         cursor="pointer"
         borderWidth="1px"
         transition={'all .4s ease'}
@@ -32,13 +32,14 @@ export const Certificate = ({ img, date, program, title, credentialId, url }) =>
         bg={useColorModeValue('white', 'gray.700')}
       >
         <Image
-          src={img}
+          src={cert.img}
           objectFit="cover"
+          alt={cert.alt}
           w="100%"
         />
         <Box p={{ base: 3, sm: 5 }}>
           <Text fontSize="sm" pb={2}>
-            {date}
+            {cert.date}
           </Text>
           <VStack spacing={2} mb={3} textAlign="left">
             <chakra.h1
@@ -47,7 +48,7 @@ export const Certificate = ({ img, date, program, title, credentialId, url }) =>
               fontWeight="bold"
               w={'100%'}
             >
-              {title}
+              {cert.title}
             </chakra.h1>
             <chakra.h2
               fontSize={{ base: 'md', md: 'l'}}
@@ -56,11 +57,11 @@ export const Certificate = ({ img, date, program, title, credentialId, url }) =>
               pb={3}
               w={'100%'}
             >
-              {program}
+              {cert.program}
             </chakra.h2>
             {
-              credentialId ? 
-              <Text w={'100%'} fontSize={'md'}>Credential ID: {credentialId}</Text> :
+              cert.credentialId ? 
+              <Text w={'100%'} fontSize={'md'}>Credential ID: {cert.credentialId}</Text> :
               <></>
             }
           </VStack>

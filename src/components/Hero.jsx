@@ -17,7 +17,6 @@ import { ImGithub as GithubIcon, ImLinkedin as LinkedInIcon } from 'react-icons/
 export const Hero = ({ id }) => {
   const accentColor = useColorModeValue('blue.100', 'gray.600');
   const altAccentColor = useColorModeValue('blue.300', 'gray.400');
-  const altHoverAccentColor = useColorModeValue('blue.300', 'gray.400');
 
   return (
     <Container maxW={'7xl'} id={id}>
@@ -69,8 +68,7 @@ export const Hero = ({ id }) => {
                 icon={<LinkedInIcon />}
                 color={altAccentColor}
                 _hover={{
-                  bg: altHoverAccentColor,
-                  color: useColorModeValue('white', 'gray.700'),
+                  color: useColorModeValue('blue.500', 'gray.500'),
                 }}
               />
             </Link>
@@ -83,8 +81,7 @@ export const Hero = ({ id }) => {
                 icon={<GithubIcon />}
                 color={altAccentColor}
                 _hover={{
-                  bg: altHoverAccentColor,
-                  color: useColorModeValue('white', 'gray.700'),
+                  color: useColorModeValue('blue.500', 'gray.500'),
                 }}
                 isRound
               />

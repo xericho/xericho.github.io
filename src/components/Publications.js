@@ -40,7 +40,7 @@ export const Publications = ({ id }) => {
         </Text>
       </Heading>
 
-      <Stack pt={5}>
+      <Stack pt={5} position={'relative'}>
         <Box p={5} >
           <Text
             fontSize={{ base: 'md', md: 'lg' }}>

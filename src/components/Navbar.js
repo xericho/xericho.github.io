@@ -8,22 +8,45 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   useColorModeValue,
   useDisclosure,
+  Link,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
 } from '@chakra-ui/icons';
+import { Link as ScrollLink } from 'react-scroll';
 import { ColorModeSwitcher } from './ColorModeSwitcher'
 import logo from '../assets/EH_logo_v2.webp'
 
-export const Navbar = ({ theme }) => {
+const NAV_ITEMS = [
+  {
+    label: 'About',
+    href: 'about'
+  },
+  {
+    label: 'Experience',
+    href: 'experience',
+  },
+  {
+    label: 'Certificates',
+    href: 'certificates',
+  },
+  {
+    label: 'Publications',
+    href: 'publications',
+  },
+  {
+    label: 'Contact',
+    href: 'contact',
+  },
+];
+
+export const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
   const invertImg = useColorModeValue({}, {filter: 'invert(1)'})
-  // theme.styles.global.body.bg = 'blue.100'
 
   return (
     <Container maxW={'5xl'}>
@@ -90,9 +113,14 @@ const DesktopNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Link
+            as={ScrollLink}
+            to={navItem.href}
+            smooth={'easeOutCubic'}
+            offset={-40}
+            duration={1000}
             className='underline'
             m={2}
-            href={navItem.href ?? '#'}
+            // href={navItem.href ?? '#'}
             fontSize={'md'}
             fontWeight={500}
             color={linkColor}
@@ -131,8 +159,11 @@ const MobileNavItem = ({ label, children, href }) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={Link}
-        href={href ?? '#'}
+        as={ScrollLink}
+        to={href}
+        smooth={'easeOutCubic'}
+        offset={-40}
+        duration={1000}
         justify={'space-between'}
         align={'center'}
         _hover={{
@@ -173,26 +204,3 @@ const MobileNavItem = ({ label, children, href }) => {
     </Stack>
   );
 };
-
-const NAV_ITEMS = [
-  {
-    label: 'About',
-    href: '#about'
-  },
-  {
-    label: 'Experience',
-    href: '#experience',
-  },
-  {
-    label: 'Certificates',
-    href: '#certificates',
-  },
-  {
-    label: 'Publications',
-    href: '#publications',
-  },
-  {
-    label: 'Contact',
-    href: '#contact',
-  },
-];
