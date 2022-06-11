@@ -19,7 +19,8 @@ import {
 import Recaptcha from 'react-google-recaptcha'
 import { BsPerson } from 'react-icons/bs';
 import { MdEmail } from 'react-icons/md';
-import avatar from '../assets/avatar-2fingers-half.png'
+import avatarHover from '../assets/avatar-2fingers-half.png'
+import avatar from '../assets/avatar-wink-half.png'
 
 const RECAPTCHA_KEY = '6LecAfYbAAAAAKpTuVMSWMgn_Mp-IK4zfTabmGdu'
 
@@ -100,18 +101,27 @@ export const Contact = ({ id }) => {
           id="contactForm"
           bg='gray.50'
         >
-          <Image
-            alt={'Contact Me Image'}
-            fit={'contain'}
-            align={'top'}
-            top={'-3rem'}
-            right={'5rem'}
-            w={'7rem'}
-            h={'100%'}
-            src={avatar}
-            position={'absolute'}
-            display={{ base: 'none', md: 'block' }}
-          />
+          <Container
+            className='figure'
+            display={{ base: 'none', md: 'flex'}}
+          >
+            <Image
+              alt={'Contact Me Image'}
+              fit={'contain'}
+              className='image-main'
+              w={'5.5rem'}
+              h={'100%'}
+              src={avatar}
+            />
+            <Image
+              alt={'Contact Me 2 Image'}
+              fit={'contain'}
+              className='image-hover'
+              w={'7rem'}
+              h={'100%'}
+              src={avatarHover}
+            />
+          </Container>
           <VStack spacing={5} alignItems={'flex-start'} >
             <input type="hidden" name="form-name" value="contactForm" />
             <FormControl isRequired>
