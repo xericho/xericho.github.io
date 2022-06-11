@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 
 export const Certificate = ( cert ) => {
-  const boxShadowColor = useColorModeValue('blue-50', 'gray-900') 
+  const boxShadowColor = useColorModeValue('blue-50', 'gray-800') 
 
   const handleLinkClick = (e, link) => {
     window.open(link);

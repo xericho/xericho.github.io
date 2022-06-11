@@ -70,7 +70,10 @@ export const Certificates = ({ id }) => {
           ))
         }
       </Stack>
-      <Box className='dots'></Box>
+      <Box className={useColorModeValue('dots', 'dots-dark')} style={{
+        right: 0,
+        bottom: '-2rem'
+      }}></Box>
     </Container>
   )
 }

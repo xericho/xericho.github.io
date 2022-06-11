@@ -166,24 +166,35 @@ const Card = ({ title, subtitle, description, collapse, date, icon, accentColor 
           >
             {subtitle}
           </chakra.h2>
-          <Collapse startingHeight={65} in={show}>
-            <UnorderedList>
-            {
-              description.map((item) => (
-                <ListItem 
-                  key={item}
-                  fontSize={{ base: 'md', md: 'xl'}}
-                  >{item}</ListItem>
-              ))
-            }
-            </UnorderedList>
-          </Collapse>
           {
             collapse ? 
+            <>
+              <Collapse startingHeight={65} in={show}>
+                <UnorderedList>
+                {
+                  description.map((item) => (
+                    <ListItem 
+                      key={item}
+                      fontSize={{ base: 'md', md: 'xl'}}
+                      >{item}</ListItem>
+                  ))
+                }
+                </UnorderedList>
+              </Collapse>
               <Button size='sm' onClick={handleToggle}  variant='ghost'>
                 Show {show ? 'Less' : 'More'}
-              </Button> :
-              <Text></Text>
+              </Button>
+            </> :
+              <UnorderedList style={{marginInlineStart: '1em'}}>
+              {
+                description.map((item) => (
+                  <ListItem 
+                    key={item}
+                    fontSize={{ base: 'md', md: 'xl'}}
+                    >{item}</ListItem>
+                ))
+              }
+              </UnorderedList>
           }
         </VStack>
       </Box>

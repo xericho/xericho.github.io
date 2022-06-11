@@ -11,7 +11,9 @@ import { Experience } from './components/Experience'
 import { Certificates } from './components/Certificates'
 import { Publications } from './components/Publications'
 import { Contact } from './components/Contact'
+import { ScrollUpBtn } from './components/ScrollUpBtn';
 import theme from './theme';
+import { HideBetween } from 'react-hide-on-scroll'
 
 function App() {
 
@@ -28,6 +30,9 @@ function App() {
         <Publications id="publications" />
         <Contact id="contact" />
       </Box>
+      <HideBetween height startHeight={0} endHeight={150}>
+        <ScrollUpBtn />
+      </HideBetween>
     </ChakraProvider>
   );
 }

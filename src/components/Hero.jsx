@@ -1,5 +1,6 @@
 import {
   IconButton,
+  Box,
   Container,
   Stack,
   Flex,
@@ -26,6 +27,7 @@ export const Hero = ({ id }) => {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
         textAlign={'center'}
+        position='relative'
         direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} >
           <Heading
@@ -99,6 +101,18 @@ export const Hero = ({ id }) => {
               />
             </Link>
           </HStack>
+          <Box className={useColorModeValue('dots', 'dots-dark')}
+            display={{ base: 'none', md: 'block'}}
+            style={{
+              left: 0,
+              bottom: '-5rem',
+            }}></Box>
+          <Box className={useColorModeValue('dots', 'dots-dark')}
+            display={{ base: 'block', md: 'none'}}
+            style={{
+              left: '-5rem',
+              top: '20rem',
+            }}></Box>
         </Stack>
 
         <Flex

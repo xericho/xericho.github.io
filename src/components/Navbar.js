@@ -115,7 +115,7 @@ const DesktopNav = () => {
           <Link
             as={ScrollLink}
             to={navItem.href}
-            smooth={'easeOutCubic'}
+            smooth={true}
             offset={-40}
             duration={1000}
             className='underline'
@@ -161,7 +161,7 @@ const MobileNavItem = ({ label, children, href }) => {
         py={2}
         as={ScrollLink}
         to={href}
-        smooth={'easeOutCubic'}
+        smooth={true}
         offset={-40}
         duration={1000}
         justify={'space-between'}
