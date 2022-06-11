@@ -63,7 +63,7 @@ export const About = ({ id }) => {
             zIndex={-1}
             color={useColorModeValue('blue.50', 'gray.700')}
           />
-          <Animated animateIn="flipInX" animateOnce={true}>
+          <Animated animateIn="zoomIn" animateOnce={true}>
             <Image
               alt={'About Me Image'}
               fit={'cover'}

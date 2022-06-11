@@ -108,7 +108,7 @@ export const Hero = ({ id }) => {
           position={'relative'}
           w={'full'}>
           <Blob
-            className='animate__animated animate__zoomIn'
+            // className='animate__animated animate__zoomIn'
             w={'150%'}
             h={'150%'}
             position={'absolute'}
