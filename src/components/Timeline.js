@@ -16,6 +16,7 @@ import {
   Icon,
 } from '@chakra-ui/react';
 import { IoMdSchool as SchoolIcon, IoMdBusiness as WorkIcon } from 'react-icons/io'
+import { Animated } from './Animated'
 
 const milestones = [
   {
@@ -100,7 +101,9 @@ export const Timeline = ({ accentColor }) => {
       {milestones.map((milestone, title) => (
         <Flex key={title} mb="10px">
           <LineWithDot />
-          <Card {...milestone} accentColor={accentColor} />
+          <Animated animateIn={'fadeIn'} animateOnce={true}>
+            <Card {...milestone} accentColor={accentColor} />
+          </Animated>
         </Flex>
       ))}
     </Container>
@@ -202,26 +205,28 @@ const LineWithDot = () => {
         borderColor={useColorModeValue('gray.200', 'gray.700')}
         top="0px"
       ></chakra.span>
-      <Box pos="relative" p="10px">
-        <Box
-          pos="absolute"
-          width="100%"
-          height="100%"
-          bottom="0"
-          right="0"
-          top="0"
-          left="0"
-          backgroundSize="cover"
-          backgroundRepeat="no-repeat"
-          backgroundPosition="center center"
-          backgroundColor={backgroundColor}
-          borderRadius="100px"
-          border="3px solid"
-          borderColor={borderAccentColor}
-          backgroundImage="none"
-          opacity={1}
-        ></Box>
-      </Box>
+      <Animated animateIn={'slideInDown'} animateOnce={true} offset={20}>
+        <Box pos="relative" p="10px">
+          <Box
+            pos="absolute"
+            width="100%"
+            height="100%"
+            bottom="0"
+            right="0"
+            top="0"
+            left="0"
+            backgroundSize="cover"
+            backgroundRepeat="no-repeat"
+            backgroundPosition="center center"
+            backgroundColor={backgroundColor}
+            borderRadius="100px"
+            border="3px solid"
+            borderColor={borderAccentColor}
+            backgroundImage="none"
+            opacity={1}
+          ></Box>
+        </Box>
+      </Animated>
     </Flex>
   );
 };

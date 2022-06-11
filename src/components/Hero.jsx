@@ -13,6 +13,7 @@ import {
 import { Blob } from './Blob';
 import avatar from '../assets/avatar.png'
 import { ImGithub as GithubIcon, ImLinkedin as LinkedInIcon } from 'react-icons/im';
+import 'animate.css'
 
 export const Hero = ({ id }) => {
   const accentColor = useColorModeValue('blue.100', 'gray.600');
@@ -26,15 +27,24 @@ export const Hero = ({ id }) => {
         py={{ base: 20, md: 28 }}
         textAlign={'center'}
         direction={{ base: 'column', md: 'row' }}>
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        <Stack flex={1} >
           <Heading
+            className='animate__animated animate__tada'
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
             <Text as={'span'} color={altAccentColor}>
-              Hey there! 👋
+              Hey there! {' '}
             </Text>
-            <br />
+            <Text as={'span'} className=''>
+              👋
+            </Text>
+          </Heading>
+          <Heading
+            pb={3}
+            lineHeight={1.1}
+            fontWeight={600}
+            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
             <Text as={'span'} >
               I'm {' '}
             </Text>
@@ -55,7 +65,9 @@ export const Hero = ({ id }) => {
             </Text>
             <br />
           </Heading>
-          <Text color={useColorModeValue('gray.600', 'gray.200')}>
+          <Text color={useColorModeValue('gray.600', 'gray.200')} py={7}
+            fontSize={{ base: 'md', md: 'lg'}} 
+          >
               I am a machine learning engineer based in San Diego, CA.
           </Text>
           <HStack justifyContent={'center'}>
@@ -96,6 +108,7 @@ export const Hero = ({ id }) => {
           position={'relative'}
           w={'full'}>
           <Blob
+            className='animate__animated animate__zoomIn'
             w={'150%'}
             h={'150%'}
             position={'absolute'}

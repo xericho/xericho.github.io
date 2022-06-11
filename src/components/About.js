@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { Blob } from './Blob';
 import avatar from '../assets/avatar-laying-down.png'
+import { Animated } from './Animated'
 
 export const About = ({ id }) => {
   const accentColor = useColorModeValue('blue.100', 'gray.600');
@@ -62,17 +63,20 @@ export const About = ({ id }) => {
             zIndex={-1}
             color={useColorModeValue('blue.50', 'gray.700')}
           />
-          <Image
-            alt={'About Me Image'}
-            fit={'cover'}
-            align={'center'}
-            w={'15rem'}
-            h={'100%'}
-            src={avatar}
-          />
+          <Animated animateIn="flipInX" animateOnce={true}>
+            <Image
+              alt={'About Me Image'}
+              fit={'cover'}
+              align={'center'}
+              w={'15rem'}
+              h={'100%'}
+              src={avatar}
+            />
+          </Animated>
         </Flex>
 
-        <Stack flex={2} spacing={{ base: 5, md: 10 }} fontSize={{ base: 'md', md: 'xl'}}>
+        <Stack flex={2} spacing={{ base: 5, md: 10 }} fontSize={{ base: 'md', md: 'xl'}}
+        >
           <Text>
               Hello! My name is Eric Ho and I'm a machine learning engineer
               based in San Diego. I went to the University of California, San Diego
