@@ -31,7 +31,7 @@ export const Hero = ({ id }) => {
         direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} >
           <Heading
-            className='animate__animated animate__tada'
+            className='animate__animated animate__tada animate__delay-1s'
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
@@ -122,7 +122,7 @@ export const Hero = ({ id }) => {
           position={'relative'}
           w={'full'}>
           <Blob
-            // className='animate__animated animate__zoomIn'
+            className='animate__animated animate__zoomIn'
             w={'150%'}
             h={'150%'}
             position={'absolute'}
