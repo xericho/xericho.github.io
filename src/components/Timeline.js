@@ -25,11 +25,13 @@ const milestones = [
     subtitle: 'BigBear.ai',
     icon: WorkIcon,
     description: [
-      'Created a hospital admission count forecast model that predicts a week into the future with <7% MAPE to help hospitals better manage their resources',
-      'Developed a feature selection pipeline in Databricks that automates the feature engineering process and integrated it to a proprietary auto-ML software ',
-      'Trained an object segmentation computer vision model that detects maritime ships from satellite images using Yolov5 and Detectron2 deep neural networks',
+		'Deployed machine learning models using Django REST API web server, distributed task queues, Redis caching, PostgreSQL on AWS to integrate with commercial products',
+		'Optimized forecast models using time series analysis and decomposition, improving the baseline\'s mean average error by 50% and monitored performance using MLflow',
+		'Trained hospital admission forecast models that predicts a week into the future with <7% MAPE to help hospitals better manage their resources',
+		'Developed a feature selection pipeline in Databricks that automates the feature engineering process and integrated it to a proprietary auto-ML software ',
+		'Trained an object segmentation computer vision model that detects maritime ships from satellite images using Yolov5 and Detectron2 deep neural networks with Pytorch',
     ],
-    collapse: true,
+    collapse: false,
   },
   {
     date: 'Mar 2019 - Nov 2021',
@@ -37,7 +39,7 @@ const milestones = [
     subtitle: 'Trabus Technologies',
     icon: WorkIcon,
     description: [
-      'Developed a travel time model that predicts the ETA of two points on the US waterway using gradient boosting which achieved 22% MAPE, and deployed using Docker containers on AWS EC2 instances',
+      'Developed a travel time model that predicts the ETA of two points on the US waterway using gradient boosting which achieved <15% MAPE, and deployed using Docker containers on AWS EC2 instances',
       'Built a GraphQL webserver for a river information system commercial application to advise mariners of ETAs, potential delays, and hazardous conditions (patent pending)',
       'Implemented a management system that allows users to oversee the work progress of their clients and auto-generates Tableau workbooks by parsing/analyzing text files using AWS S3 buckets, Django, and PostgreSQL',
       'Pioneered an EDI to exchange invoice documents between barge companies with a REST API and a full stack website to replace outdated exchange system',
@@ -114,8 +116,8 @@ const Card = ({ title, subtitle, description, collapse, date, icon, accentColor 
   const [show, setShow] = useState(false)
   const handleToggle = () => setShow(!show)
 
-  const cardColor = useColorModeValue('gray.100', 'gray.700') 
-  const arrowColor = useColorModeValue('gray-100', 'gray-700') 
+  const cardColor = useColorModeValue('gray.100', 'gray.700')
+  const arrowColor = useColorModeValue('gray-100', 'gray-700')
 
   return (
     <HStack
@@ -138,12 +140,12 @@ const Card = ({ title, subtitle, description, collapse, date, icon, accentColor 
       }}
     >
       <Box>
-        <Icon as={icon} 
-          w={{ base: 8, md: 10}} 
-          h={{ base: 8, md: 10}} 
+        <Icon as={icon}
+          w={{ base: 8, md: 10}}
+          h={{ base: 8, md: 10}}
           right={'1rem'}
           top={'0.5rem'}
-          color={accentColor}  
+          color={accentColor}
           position={'absolute'} />
         <Text fontSize="sm" pb={2}>
           {date}
@@ -167,13 +169,13 @@ const Card = ({ title, subtitle, description, collapse, date, icon, accentColor 
             {subtitle}
           </chakra.h2>
           {
-            collapse ? 
+            collapse ?
             <>
               <Collapse startingHeight={65} in={show}>
                 <UnorderedList>
                 {
                   description.map((item) => (
-                    <ListItem 
+                    <ListItem
                       key={item}
                       fontSize={{ base: 'md', md: 'xl'}}
                       >{item}</ListItem>
@@ -188,7 +190,7 @@ const Card = ({ title, subtitle, description, collapse, date, icon, accentColor 
               <UnorderedList style={{marginInlineStart: '1em'}}>
               {
                 description.map((item) => (
-                  <ListItem 
+                  <ListItem
                     key={item}
                     fontSize={{ base: 'md', md: 'xl'}}
                     >{item}</ListItem>
