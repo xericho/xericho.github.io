@@ -35,6 +35,10 @@ const NAV_ITEMS = [
     href: 'certificates',
   },
   {
+    label: 'Patents',
+    href: 'patents',
+  },
+  {
     label: 'Publications',
     href: 'publications',
   },

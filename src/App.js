@@ -10,6 +10,7 @@ import { About } from './components/About'
 import { Experience } from './components/Experience'
 import { Certificates } from './components/Certificates'
 import { Publications } from './components/Publications'
+import { Patents } from './components/Patents'
 import { Contact } from './components/Contact'
 import { ScrollUpBtn } from './components/ScrollUpBtn';
 import theme from './theme';
@@ -27,6 +28,7 @@ function App() {
         <About id="about" />
         <Experience id="experience" />
         <Certificates id="certificates" />
+        <Patents id="patents" />
         <Publications id="publications" />
         <Contact id="contact" />
       </Box>
